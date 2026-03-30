@@ -44,24 +44,27 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    // public function edit(Category $category)
+    public function edit(string $id)
     {
-        //
+        return "Edit";
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    //public function update(Request $request, Category $category)
+    public function update(string $id)
     {
-        //
+        return "Update";
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    // public function destroy(Category $category)
+    public function destroy(string $id)
     {
-        //
+        return "Destroy";
     }
 }
