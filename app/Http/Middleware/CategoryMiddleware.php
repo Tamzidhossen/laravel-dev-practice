@@ -16,7 +16,8 @@ class CategoryMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $key = $request->header('secret-key');
-        if ($key !== 'key') {
+        $Body = $request->input('stock');
+        if ($key != 'key' || $Body != 7) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
         return $next($request);
