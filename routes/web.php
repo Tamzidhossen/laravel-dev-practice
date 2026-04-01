@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DemoController;
 use App\Http\Middleware\CategoryMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -10,3 +11,11 @@ Route::get('/', function () {
 
 Route::resource('categories', CategoryController::class)
     ->middleware([CategoryMiddleware::class]);
+
+
+Route::middleware(['Demo'])-> group( function () {
+
+    Route::get('Demo1', [DemoController::class, 'Demo1']);
+    Route::get('Demo2', [DemoController::class, 'Demo2']);
+    Route::get('Demo3', [DemoController::class, 'Demo3']);
+});

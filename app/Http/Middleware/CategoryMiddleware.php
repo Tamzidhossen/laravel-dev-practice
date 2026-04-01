@@ -17,7 +17,7 @@ class CategoryMiddleware
     {
         $key = $request->header('secret-key');
         $Body = $request->input('stock');
-        if ($key != 'key' || $Body != 7) {
+        if ($key != 'key' || $Body !== 7) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
         return $next($request);
