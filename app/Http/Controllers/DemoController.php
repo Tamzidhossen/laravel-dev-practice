@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Nette\Utils\Json;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class DemoController extends Controller
 {
@@ -20,6 +19,11 @@ class DemoController extends Controller
     public function Demo3(): JsonResponse
     {
         return response()->json(['Message' => 'Demo3 Executed'], 201);
+    }
+
+    public function Demo4(Request $request): Array
+    {
+        return $request->headers->all();
     }
 
 
