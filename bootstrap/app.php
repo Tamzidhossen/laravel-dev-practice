@@ -19,6 +19,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'Demo' => CategoryMiddleware::class
         ]);
+
+        $middleware->web(prepend: [
+            'throttle:6,1',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
